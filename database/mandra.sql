@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-10-2018 a las 09:32:42
+-- Tiempo de generación: 16-10-2018 a las 13:11:09
 -- Versión del servidor: 5.7.23-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.32-0ubuntu0.16.04.1
 
@@ -450,6 +450,19 @@ CREATE TABLE `usuario_has_habilidad` (
   `user_register_id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_has_tecnica`
+--
+
+CREATE TABLE `usuario_has_tecnica` (
+  `tecnica_idtecnica` int(11) NOT NULL,
+  `importancia` int(11) NOT NULL,
+  `pericidad` int(11) NOT NULL,
+  `user_register_id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Índices para tablas volcadas
 --
@@ -595,6 +608,15 @@ ALTER TABLE `usuario_has_habilidad`
   ADD KEY `fk_usuario_has_habilidad_usuario1_idx` (`user_register_id_usuario`);
 
 --
+-- Indices de la tabla `usuario_has_tecnica`
+--
+ALTER TABLE `usuario_has_tecnica`
+  ADD PRIMARY KEY (`tecnica_idtecnica`,`user_register_id_usuario`),
+  ADD UNIQUE KEY `user_register_id_usuario_UNIQUE` (`user_register_id_usuario`),
+  ADD KEY `fk_usuario_has_tecnica_tecnica1_idx` (`tecnica_idtecnica`),
+  ADD KEY `fk_usuario_has_tecnica_usuario1_idx` (`user_register_id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -731,6 +753,13 @@ ALTER TABLE `usuario`
 ALTER TABLE `usuario_has_habilidad`
   ADD CONSTRAINT `fk_usuario_has_habilidad_habilidad1` FOREIGN KEY (`habilidad_idhabilidad`) REFERENCES `habilidad` (`idhabilidad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_usuario_has_habilidad_usuario1` FOREIGN KEY (`user_register_id_usuario`) REFERENCES `user_register` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `usuario_has_tecnica`
+--
+ALTER TABLE `usuario_has_tecnica`
+  ADD CONSTRAINT `fk_usuario_has_tecnica_tecnica1` FOREIGN KEY (`tecnica_idtecnica`) REFERENCES `tecnica` (`idtecnica`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_usuario_has_tecnica_usuario1` FOREIGN KEY (`user_register_id_usuario`) REFERENCES `user_register` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
