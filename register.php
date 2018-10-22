@@ -17,7 +17,7 @@ include('server.php')
     <link href="resources/bootstrap-theme.min.css" rel="stylesheet">
     <head>
     <title>Registro del Sistema</title>
-  <link rel="stylesheet" href="resources/style.css">
+  <link rel="stylesheet" href="resources/sstyle.css">
 </head>
 <body>
   <div class="header">
