@@ -19,7 +19,7 @@
 </head>
 <body>
   <div class="header">
-  	<h2>Login del Usuario</h2>
+  	<h2>Login del Usuadddrio</h2>
   </div>
 	 
   <form method="post" action="login.php">
