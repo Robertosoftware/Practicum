@@ -5,7 +5,7 @@
 body {
   font-size: 20px;
 background-attachment: fixed;
-background-image: url("http://www.mandrasoluciones.com/yahoo_site_admin/assets/images/Logo_Mandra.100215904_logo.png");
+background-image: url("logo.png");
 background-size: 30%;
 background-position: center center;
 }
@@ -16,9 +16,9 @@ h2{
   width: 50%;
   margin: 50px auto 0px;
   color: white;
-  background: #5F9EA0;
+  background: #DD1B36;
   text-align: center;
-  border: 1px solid #B0C4DE;
+  border: 1px solid #DD1B36;
   border-bottom: none;
   border-radius: 10px 10px 0px 0px;
   padding: 20px;
@@ -27,7 +27,7 @@ form, .content {
   width: 50%;
   margin: 0px auto;
   padding: 20px;
-  border: 1px solid #B0C4DE;
+  border: 1px solid #DD1B36;
   background: white;
   display: block;
   border-radius: 0px 0px 10px 10px;
@@ -52,7 +52,7 @@ form, .content {
    width: 200%;
   font-size: 20px;
   color: white;
-  background: #5F9EA0;
+  background: #A1A0A5;
   border: none;
   border-radius: 5px;
 }
