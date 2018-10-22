@@ -15,7 +15,7 @@
     <link href="resources/bootstrap-theme.min.css" rel="stylesheet">
    <head>
   <title>Login del Administrador</title>
-  <link rel="stylesheet" type="text/css" href="resources/style.css">
+  <link rel="stylesheet" type="text/css" href="resources/sstyle.css">
 </head>
 <body>
   <div class="header">
