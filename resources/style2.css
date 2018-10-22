@@ -4,11 +4,11 @@
 }
 .cuerpo  {
   font-size: 20px;
-  background: #F8F8FF;
+  background: #E41835;
 }
 body {
 background-attachment: fixed;
-background-image: url("fondo.png");
+background-image: url("logo.png");
 background-size: 30%;
 background-position: center center;
 }
