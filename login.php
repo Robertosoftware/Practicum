@@ -23,7 +23,7 @@
   </div>
 	 
   <form method="post" action="login.php">
-  	<?php include('errors.php'); ?>
+  	<?php include('/errores/errors.php'); ?>
            <label>Email</label>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
