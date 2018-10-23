@@ -8,28 +8,22 @@ $errors = array();
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
 
-if ($db->connect_error) {
-  die("Connection failed: " . $db->connect_error);
-}  else{
-  echo "Connected successfully";
-}
+//if ($db->connect_error) {
+//  die("Connection failed: " . $db->connect_error);
+//}  else{
+//  echo "Connected successfully";
+//}
 if (isset($_POST['login_admin'])) {
-  $admin_name='root';
-  $password='254088Ma!';
- // $admin_name = mysqli_real_escape_string($db, $_POST['admin_name']);
-  //$password = mysqli_real_escape_string($db, $_POST['password']);
-  echo $admin_name;
-  array_push($error, "entra");
-  
- 
-
-  //if (empty($admin_name)) {
-  //	array_push($errors, "Nombre requerido para la operación");
-  //}
-  //if (empty($password)) {
-  //	array_push($errors, "Password requerido para la operación");
-//  }
-
+  $admin_name='';
+  $password='';
+ $admin_name = mysqli_real_escape_string($db, $_POST['admin_name']);
+  $password = mysqli_real_escape_string($db, $_POST['password']);
+  if (empty($admin_name)) {
+ 	array_push($errors, "Nombre requerido para la operación");
+  }
+  if (empty($password)) {
+  	array_push($errors, "Password requerido para la operación");
+  }
   if (count($errors) == 0) {
   	$query = "SELECT * FROM admin WHERE admin_name='$admin_name' AND password='$password'";
   	$results = mysqli_query($db, $query);
