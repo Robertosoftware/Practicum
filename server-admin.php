@@ -7,11 +7,12 @@ $password = "";
 $errors = array(); 
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
-
+echo "nones";
 if ($db->connect_error) {
   die("Connection failed: " . $db->connect_error);
-}  echo "Connected successfully";
-
+}  else{
+  echo "Connected successfully";
+}
 if (isset($_POST['login_admin'])) {
   array_push($error, "entra");
   $admin_name = mysqli_real_escape_string($db, $_POST['admin_name']);
