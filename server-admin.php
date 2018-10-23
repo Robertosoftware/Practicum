@@ -36,5 +36,5 @@ if (isset($_POST['login_admin'])) {
   		array_push($errors, "Email/password incorrectos");
   	}
   }
-}
+
 ?>
