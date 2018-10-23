@@ -1,4 +1,4 @@
-<?php include('Practicum/admin/session.php') ?>
+<?php include('../admin/session.php') ?>
   	<?php if (isset($_SESSION['success'])) : ?>
   	<?php endif ?>
     <!-- logged in user information -->
