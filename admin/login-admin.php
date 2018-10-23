@@ -8,14 +8,14 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="Practicum/resources/fav.ico.jpg">
+    <link rel="icon" href="../resources/fav.ico.jpg">
         <!-- Bootstrap core CSS -->
-    <link href="Practicum/resources/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/bootstrap.min.css" rel="stylesheet">
    <!-- Bootstrap theme -->
-    <link href="Practicum/resources/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../resources/bootstrap-theme.min.css" rel="stylesheet">
    <head>
   <title>Login del Administrador</title>
-  <link rel="stylesheet" type="text/css" href="Practicum/resources/sstyle.css">
+  <link rel="stylesheet" type="text/css" href="../resources/sstyle.css">
 </head>
 <body>
   <div class="header">
@@ -23,7 +23,7 @@
   </div>
 	 
   <form method="post" action="login-admin.php">
-  	<?php include('Practicum/errores/errors-admin.php'); ?>
+  	<?php include('../errores/errors-admin.php'); ?>
            <label>Administrador</label>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
@@ -38,7 +38,7 @@
   		<button type="submit" class="btn" name="login_admin">Login</button>
   	</div>
       	<p>
-        ¿Eres un usuario? <a href="login.php">Login</a>
+        ¿Eres un usuario? <a href="../usuario/login.php">Login</a>
   	</p>
   </form>
 </body>
