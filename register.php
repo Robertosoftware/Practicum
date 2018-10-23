@@ -24,7 +24,7 @@ include('server.php')
   	<h2>Registro del Usuario</h2>
   </div>
   <form method="post" action="register.php">
-  	<?php include('errors.php'); ?>
+  	<?php include('/errores/errors.php'); ?>
       <label>Email</label>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
