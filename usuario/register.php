@@ -10,21 +10,21 @@ include('server.php')
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="Practicum/resources/fav.ico.jpg">
+    <link rel="icon" href="../resources/fav.ico.jpg">
         <!-- Bootstrap core CSS -->
-    <link href="Practicum/resources/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/bootstrap.min.css" rel="stylesheet">
    <!-- Bootstrap theme -->
-    <link href="Practicum/resources/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../resources/bootstrap-theme.min.css" rel="stylesheet">
     <head>
     <title>Registro del Sistema</title>
-  <link rel="stylesheet" href="Practicum/resources/sstyle.css">
+  <link rel="stylesheet" href="../resources/sstyle.css">
 </head>
 <body>
   <div class="header">
   	<h2>Registro del Usuario</h2>
   </div>
   <form method="post" action="register.php">
-  	<?php include('Practicum/errores/errors.php'); ?>
+  	<?php include('../errores/errors.php'); ?>
       <label>Email</label>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
