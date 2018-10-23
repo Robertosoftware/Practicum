@@ -38,7 +38,7 @@
   		<button type="submit" class="btn" name="login_user_register">Login</button>
   	</div>
       	<p>
-  		¿Deseas registrarte? <a href="/usuario/register.php">Registro de Usuario</a>
+  		¿Deseas registrarte? <a href="../usuario/register.php">Registro de Usuario</a>
   	</p>
       <p>
         ¿Eres el administrador? <a href="../admin/login-admin.php">Login del Administrador</a>
