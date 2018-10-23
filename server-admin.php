@@ -30,7 +30,7 @@ if (isset($_POST['login_admin'])) {
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['admin_name'] = $admin_name;
   	  $_SESSION['success'] = "Ahora estás en el sistema";
-  	  header('location: index-admin.php');
+  	  header('location: /index-admin.php');
   	}else {
   		array_push($errors, "Email/password incorrectos");
   	}
