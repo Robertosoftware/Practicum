@@ -8,9 +8,9 @@ $errors = array();
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
 
-//if ($db->connect_error) {
-//   die("Connection failed: " . $db->connect_error);
-//}  echo "Connected successfully";
+if ($db->connect_error) {
+  die("Connection failed: " . $db->connect_error);
+}  echo "Connected successfully";
 
 if (isset($_POST['login_admin'])) {
   array_push($error, "entra");
