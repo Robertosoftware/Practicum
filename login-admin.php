@@ -23,7 +23,7 @@
   </div>
 	 
   <form method="post" action="login-admin.php">
-  	<?php include('errors-admin.php'); ?>
+  	<?php include('errores/errors-admin.php'); ?>
            <label>Administrador</label>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
