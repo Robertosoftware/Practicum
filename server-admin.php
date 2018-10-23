@@ -16,7 +16,7 @@ if ($db->connect_error) {
 if (isset($_POST['login_admin'])) {
   $admin_name = mysqli_real_escape_string($db, $_POST['admin_name']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
-  echo "nones";
+  echo $admin_name;
 //  array_push($error, "entra");
   
  
