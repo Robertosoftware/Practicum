@@ -54,7 +54,7 @@ if (isset($_POST['reg_user_register'])) {
   }
     $_SESSION['correo'] = $correo;
   	$_SESSION['success'] = "Ahora estás en el sistema";
-        	header('location: index.php');
+        	header('location: /index.php');
   }
 }
 if (isset($_POST['login_user_register'])) {
@@ -75,7 +75,7 @@ if (isset($_POST['login_user_register'])) {
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['correo'] = $correo;
   	  $_SESSION['success'] = "Ahora estás en el sistema";
-  	  header('location: index.php');
+  	  header('location: /index.php');
   	}else {
   		array_push($errors, "Email/password incorrectos");
   	}
