@@ -23,12 +23,12 @@ if (isset($_POST['login_admin'])) {
   
  
 
-  if (empty($admin_name)) {
-  	array_push($errors, "Nombre requerido para la operación");
-  }
-  if (empty($password)) {
-  	array_push($errors, "Password requerido para la operación");
-  }
+  //if (empty($admin_name)) {
+  //	array_push($errors, "Nombre requerido para la operación");
+  //}
+  //if (empty($password)) {
+  //	array_push($errors, "Password requerido para la operación");
+//  }
 
   if (count($errors) == 0) {
   	$query = "SELECT * FROM admin WHERE admin_name='$admin_name' AND password='$password'";
