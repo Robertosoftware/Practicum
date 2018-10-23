@@ -13,15 +13,16 @@ $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
 //}  echo "Connected successfully";
 
 if (isset($_POST['login_admin'])) {
+  array_push($error, "entra");
   $admin_name = mysqli_real_escape_string($db, $_POST['admin_name']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
 
-  //if (empty($admin_name)) {
-  	//array_push($errors, "Nombre requerido para la operación");
-  //}
-  //if (empty($password)) {
-  	//array_push($errors, "Password requerido para la operación");
-  //}
+  if (empty($admin_name)) {
+  	array_push($errors, "Nombre requerido para la operación");
+  }
+  if (empty($password)) {
+  	array_push($errors, "Password requerido para la operación");
+  }
 
   if (count($errors) == 0) {
   	$query = "SELECT * FROM admin WHERE admin_name='$admin_name' AND password='$password'";
