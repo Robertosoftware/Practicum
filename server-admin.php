@@ -14,10 +14,11 @@ if ($db->connect_error) {
   echo "Connected successfully";
 }
 if (isset($_POST['login_admin'])) {
-  echo "nones";
-  array_push($error, "entra");
   $admin_name = mysqli_real_escape_string($db, $_POST['admin_name']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
+  echo "nones";
+  array_push($error, "entra");
+  
  
 
   if (empty($admin_name)) {
