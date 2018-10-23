@@ -9,7 +9,7 @@
       </div>
     <div class="cuerpo">
       <div class="alert alert-success" role="alert">
-        <strong>Ahora estás en el sistema de Bright Brains</strong>
+        <strong>Ahora estás en el sistema de Mandra Soluciones</strong>
       </div>
 </div>
     </div>
