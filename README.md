@@ -1,2 +1,2 @@
 # Practicum
-Proyecto de Practicum de la Universidad Anáhuac.
+Proyecto de Practicum de la Universidad Anáhuac Norte
