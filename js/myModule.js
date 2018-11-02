@@ -3,12 +3,12 @@ var app = angular.module("myApp",["ngRoute"]);
 app.config(function($routeProvider){
 	$routeProvider
 		.when("/Registro de clase", {
-				templateUrl:"partials/clase.php",
-				controller:"gameCtrl"
+				templateUrl:"partials/Activa.php",
+				controller:"activaCtrl"
 		})
 		.when("/Actualizar datos", {
-				templateUrl:"partials/actualizar.php",
-				controller:"gameCtrl"
+				templateUrl:"partials/Actualiza.php",
+				controller:"actualizaCtrl"
 		})
 		.otherwise({
 				templateUrl:"partials/main.php",
