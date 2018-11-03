@@ -8,12 +8,12 @@
     	<p>Hola <strong><?php echo $_SESSION['correo']; ?></strong></p> </h1>
       </div>
     <div class="cuerpo">
- <label>Email</label>
+      </div>
+   <label>Email</label>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="email" class="form-control" name="correo" ria-describedby="sizing-addon1" value="">
 </div>
-      </div>
 </div>
     </div>
 <!--<a role="button" class="btn btn-success btn-lg btn-block" href="#!Registro">Registrar Alumno</a>-->
