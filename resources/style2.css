@@ -15,3 +15,8 @@ background-position: center center;
 .fondo  {
   background: white;
 }
+.input-group label {
+  display: block;
+  text-align: left;
+  margin: 3px;
+}
