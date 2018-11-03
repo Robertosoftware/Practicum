@@ -2,11 +2,11 @@ var app = angular.module("myApp",["ngRoute"]);
 
 app.config(function($routeProvider){
 	$routeProvider
-		.when("/Registro de clase", {
+		.when("/Activa", {
 				templateUrl:"partials/Activa.php",
 				controller:"activaCtrl"
 		})
-		.when("/Actualizar datos", {
+		.when("/Actualiza", {
 				templateUrl:"partials/Actualiza.php",
 				controller:"actualizaCtrl"
 		})
