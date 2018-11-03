@@ -6,7 +6,7 @@
      <div class="jumbotron">
         <h1><?php  if (isset($_SESSION['correo'])) : ?>
     	<p>Hola <strong><?php echo $_SESSION['correo']; ?></strong></p> </h1>
-   <label>Email</label>
+       <div class="labelac">Email</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="email" class="form-control" name="correo" ria-describedby="sizing-addon1" value="">
