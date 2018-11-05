@@ -1,5 +1,7 @@
 
-
+ <?php
+include('reg.php')
+?>
 <html lang="en">
 <head>
 	<title>Registro</title>
@@ -108,9 +110,7 @@
 
 
     </div>
-      <?php
-include('reg.php')
-?>
+     
   
 </body>
 </html>
