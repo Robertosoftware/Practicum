@@ -9,7 +9,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);?>
 
 	<link rel="stylesheet" type="text/css" href="../resources/registro.css">
 	
-  <link rel="icon" href="resources/fav.ico.jpg">
+  <link rel="icon" href="../resources/fav.ico.jpg">
         <!-- Bootstrap core CSS -->
     <link href="../resources/bootstrap.min.css" rel="stylesheet">
    <!-- Bootstrap theme -->
@@ -17,7 +17,9 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);?>
 </head>
 <body>
 
-    <h1><center>Registro de usuario</center></h1>
+    <div class="header">
+  	<h2>Formulario del Usuario</h2>
+  </div>
 <div>
   <form action="#" method="post">
       <label for="nombre">Nombre</label><br>
