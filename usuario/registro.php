@@ -52,7 +52,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);?>
       <label for="descripcionhab">Descripción habilidades</label><br>
       <input class="form-control" type="text" name="descripcionhab" placeholder="Descipción habilidades"/><br>
         
-        <label for="descripcionhper">Descripción personal</label><br>
+        <label for="descripcionper">Descripción personal</label><br>
       <input class="form-control" type="text" name="descripcionper" placeholder="Descipción personal"/><br>
         
         <label for="horario">Horario</label><br>
@@ -110,36 +110,48 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);?>
 
 <?php
 
-//    $con=mysqli_connect("localhost", "root", "password", "vestidos");
+    $con=mysqli_connect("localhost", "root", "254088Ma!", "mandra");
 
     // Check connection
-  //  if (mysqli_connect_errno()) {
-    //  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-   // }
+  if (mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
     // escape variables for security
-    //$nusuario = mysqli_real_escape_string($con, $_POST['nusuario']);
-    //$email = mysqli_real_escape_string($con, $_POST['email']);
-    //$password = mysqli_real_escape_string($con, $_POST['password']);
-    //$fecha_nac = mysqli_real_escape_string($con, $_POST['fecha_nac']);
-    //$no_tarjeta = mysqli_real_escape_string($con, $_POST['no_tarjeta']);
-    //$direccion = mysqli_real_escape_string($con, $_POST['direccion']);
-    //$sql="INSERT INTO usuario (nusuario, email, password, fecha_nac, no_tarjeta, direccion)
-      //VALUES ('$nusuario', '$email', '$password', '$fecha_nac', '$no_tarjeta', '$direccion');";
-//if(!$no_tarjeta==NULL){
-  //  if (!mysqli_query($con,$sql)) {
-    //  die('Error: ' . mysqli_error($con));
-    //}?>
-    <script>
-    document.getElementById("lol").style.visibility="visible";
-    </script><?php
+    $nombre = mysqli_real_escape_string($con, $_POST['nombre']);
+    $apellidop = mysqli_real_escape_string($con, $_POST['apellidop']);
+    $apellidom = mysqli_real_escape_string($con, $_POST['apellidom']);
+    $edad = mysqli_real_escape_string($con, $_POST['edad']);
+    $telefono = mysqli_real_escape_string($con, $_POST['telefono']);
+    $celular = mysqli_real_escape_string($con, $_POST['celular']);
+	$linkedin = mysqli_real_escape_string($con, $_POST['linkedin']);
+	$sueldoac = mysqli_real_escape_string($con, $_POST['sueldoac']);
+	$salariodes = mysqli_real_escape_string($con, $_POST['salariodes']);
+	$descripcionhab = mysqli_real_escape_string($con, $_POST['descripcionhab']);
+	$descripcionper = mysqli_real_escape_string($con, $_POST['descripcionper']);
+	$horario = mysqli_real_escape_string($con, $_POST['horario']);
+	$categoria = mysqli_real_escape_string($con, $_POST['categoria']);
+	$subcategoria = mysqli_real_escape_string($con, $_POST['subcategoria']);
+	$localidad = mysqli_real_escape_string($con, $_POST['localidad']);
+	$ingles = mysqli_real_escape_string($con, $_POST['ingles']);
+	$sexo = mysqli_real_escape_string($con, $_POST['sexo']);
+	$educacion = mysqli_real_escape_string($con, $_POST['educacion']);
+	
+    $sql="INSERT INTO usuario ('nombre', 'apellido_paterno', 'apellido_materno', 'edad', 'telefono', 'celular', 'linkedin', 'sueldo_actual', 
+    'salario_deseado', 'descripción_habilidad', 'descripcion_persona', 'horario_id_horario',
+    'subcategoria_idsubcategoria', 'categoria_idcategoria', 'localidad_idlocalidad', 'ingles_idingles', 'sexo_idsexo',
+    'educacion_ideducacion')
+      VALUES ('$nombre', '$apellidop', '$apellidom', '$edad', '$telefono', '$celular', '$linkedin', '$sueldoac', '$salariodes', '$descripcionhab',
+      '$descripcionper', '$horario','$subcategoria', '$categoria','$localidad', '$ingles', '$sexo', '$educacion');";
+?>
+    <?php
 
 
-//$result = mysqli_query($con,"SELECT * FROM usuario where email='$email';");
+$result = mysqli_query($con,"SELECT * FROM usuario where nombre='$nombre';");
 
 
 
-//if($result->num_rows > 0){
-//$row = mysqli_fetch_array($result);
+if($result->num_rows > 0){
+$row = mysqli_fetch_array($result);
 //if($pw==$row['password']){
 //$_SESSION['loggedin'] = true;
 
@@ -152,7 +164,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);?>
 
 //}}
 //}
-//  mysqli_close($con);
+  mysqli_close($con);
 
 //if(!$_SESSION['username']==NULL){
   //echo "Sesión iniciada como: " . $_SESSION['username'];
