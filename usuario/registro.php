@@ -99,9 +99,6 @@
         <input class="form-control" type="radio" name="educacion" value="4"/>Bachillerato<br>
         <input class="form-control" type="radio" name="educacion" value="5"/>Secundaria<br>
              
-        <?php
-include('reg.php')
-?>
   
     
           <input name="boton_reg" class="btn btn--form" type="submit" value="Registrar" /><br>
@@ -111,6 +108,9 @@ include('reg.php')
 
 
     </div>
-
+      <?php
+include('reg.php')
+?>
+  
 </body>
 </html>
