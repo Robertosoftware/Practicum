@@ -1,7 +1,5 @@
 <?php
-//include('reg.php')
-  session_start();
-error_reporting(E_ERROR | E_WARNING | E_PARSE);?>
+include('reg.php')?>
 <html lang="en">
 <head>
 	<title>Registro</title>
