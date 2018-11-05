@@ -1,7 +1,7 @@
 <?php
 session_start()
-    $con=mysqli_connect("localhost", "root", "254088Ma!", "mandra");
-
+    $con=mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
+echo "ddd"
 
 if (isset($_POST['boton_reg'])) {
     // Check connection
