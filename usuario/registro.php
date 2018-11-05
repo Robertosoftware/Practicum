@@ -7,13 +7,13 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);?>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" type="text/css" href="css/registro.css">
+	<link rel="stylesheet" type="text/css" href="../resources/registro.css">
 	
   <link rel="icon" href="resources/fav.ico.jpg">
         <!-- Bootstrap core CSS -->
-    <link href="resources/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/bootstrap.min.css" rel="stylesheet">
    <!-- Bootstrap theme -->
-    <link href="resources/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../resources/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
 
