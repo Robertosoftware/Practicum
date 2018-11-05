@@ -1,5 +1,7 @@
 <?php
-include('reg.php')?>
+include('reg.php')
+?>
+
 <html lang="en">
 <head>
 	<title>Registro</title>
