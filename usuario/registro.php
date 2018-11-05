@@ -104,7 +104,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);?>
         
   
     
-          <input class="btn btn--form" type="submit" value="Registrar" /><br>
+          <input name="boton_reg" class="btn btn--form" type="submit" value="Registrar" /><br>
         
   </form>
     
