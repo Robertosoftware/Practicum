@@ -2,6 +2,8 @@
 
     $con=mysqli_connect("localhost", "root", "254088Ma!", "mandra");
 
+
+if (isset($_POST['boton_reg'])) {
     // Check connection
   if (mysqli_connect_errno()) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -32,7 +34,7 @@
     'educacion_ideducacion')
       VALUES ('$nombre', '$apellidop', '$apellidom', '$edad', '$telefono', '$celular', '$linkedin', '$sueldoac', '$salariodes', '$descripcionhab',
       '$descripcionper', '$horario','$subcategoria', '$categoria','$localidad', '$ingles', '$sexo', '$educacion');";
-?>
+}?>
     <?php
 
 
