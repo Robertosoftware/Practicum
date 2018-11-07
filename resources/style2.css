@@ -16,6 +16,16 @@ background-image: url("logo.png");
 background-size: 40%;
 background-position: center center;
 }
+td 
+{
+    text-align: center; 
+    vertical-align: middle;
+}
+th
+{
+    text-align: center; 
+    vertical-align: middle;
+}
 .fondo  {
   background: white;
   font-family: Frutiger;
