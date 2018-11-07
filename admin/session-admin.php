@@ -10,4 +10,5 @@
   	unset($_SESSION['admin_name']);
   	header("location: admin/login-admin.php");
   }
+
 ?>

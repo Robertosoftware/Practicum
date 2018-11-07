@@ -1,7 +1,8 @@
 <?php include('admin/session-admin.php') ?>
 <!DOCTYPE html>
 <html lang="es">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <head>
 <meta charset="utf-8" />
@@ -37,9 +38,27 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#!">Inicio</a></li>
-            <li><a href="#!">Ofertas de trabajo</a></li>
-            <li><a href="#!">Consultar información</a></li>
+            <li><a href="#!Registro">Inicio</a></li>
+            <li><a href="#!Oferta">Ofertas de trabajo</a></li>
+            <li class="dropdown"><!--<a href="#!">Consultar información</a>-->
+             <a class="dropdown-toggle" data-toggle="dropdown">Consulta CRUD <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+          <li class="dropdown-header">Tablas mayores</li>
+        <li><a href="#!Usuarios">Usuarios</a></li>
+        <li><a href="#">Trabajos</a></li>
+        <li class="dropdown-header">Tablas menores</li>
+        <li><a href="#">Categoria</a></li>
+        <li><a href="#">Sub categoria</a></li>
+        <li><a href="#">Competencia</a></li>
+        <li><a href="#">Competencia técnica</a></li>
+        <li><a href="#">Educación</a></li>
+        <li><a href="#">Horario</a></li>
+        <li><a href="#">Inglés</a></li>
+        <li><a href="#">Localidad</a></li>
+        <li><a href="#">Sexo</a></li>
+        <li><a href="#">Técnica</a></li>
+        <li><a href="#">Empresa</a></li>
+      </ul></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index-admin.php?logout='1'">Salir de la sesión<span class="sr-only">(current)</span></a></li>
@@ -48,10 +67,9 @@
       </div>
     </nav>
 		<div ng-view></div>
-		</div>
-		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+	</div>
     <script src="resources/bootstrap.min.js"></script>
     <script src="resources/docs.min.js"></script>
+
 </body>
 </html>

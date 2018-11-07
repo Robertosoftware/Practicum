@@ -6,12 +6,16 @@ app.config(function($routeProvider){
 				templateUrl:"partials/clase.php",
 				controller:"gameCtrl"
 		})
-		.when("/Actualizar datos", {
-				templateUrl:"partials/actualizar.php",
-				controller:"gameCtrl"
+    .when("/Usuarios", {
+				templateUrl:"partials/admin/usuarioscrud.php",
+				controller:"ofertaCtrl"
+		})
+		.when("/Oferta", {
+				templateUrl:"partials/admin/oferta.php",
+				controller:"ofertaCtrl"
 		})
 		.otherwise({
-				templateUrl:"partials/main-admin.php",
+				templateUrl:"partials/admin/main-admin.php",
 				controller:"mainCtrl"
 		});
 });
