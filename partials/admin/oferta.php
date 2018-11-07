@@ -6,8 +6,8 @@
 <div class="fondo">
      <div class="jumbotron">
                <form method="post" action="register.php">
-        <h1><?php  if (isset($_SESSION['admin_name'])) : ?>
-    	<p>Hola <strong><?php echo $_SESSION['admin_name']; ?></strong></p> </h1>
+      <?php  if (isset($_SESSION['admin_name'])) : ?>
+   <h1>Nueva oferta de trabajo</h1>
                       <?php
             $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
       mysqli_set_charset($db, 'utf8')
@@ -15,7 +15,7 @@
        <div class="labelac">Nombre de la vacante</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="nombre" class="form-control" name="nombre" ria-describedby="sizing-addon1" value="">
+  <input type="text" class="form-control" name="nombre" ria-describedby="sizing-addon1" value="">
       </div>
    <div class="labelac">Salario</div>
  <div class="input-group input-group-lg">

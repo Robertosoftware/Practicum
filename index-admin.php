@@ -47,7 +47,7 @@
         <li><a href="#!Usuarios">Usuarios</a></li>
         <li><a href="#">Trabajos</a></li>
         <li class="dropdown-header">Tablas menores</li>
-        <li><a href="#">Categoria</a></li>
+        <li><a href="#!Categoria">Categoria</a></li>
         <li><a href="#">Sub categoria</a></li>
         <li><a href="#">Competencia</a></li>
         <li><a href="#">Competencia técnica</a></li>
