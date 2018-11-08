@@ -10,6 +10,7 @@
     <link href="../resources/bootstrap.min.css" rel="stylesheet">
     <link href="../resources/navbar-fixed-top.css" rel="stylesheet">
     <link rel="icon" href="../resources/fav.ico.jpg">
+  <title>Perfil de usuario</title>
 </head>
 <body>
     <div class="fondo" style="margin-right:20%;  margin-left:20%;">
@@ -18,7 +19,7 @@
       <?php
       //  if (isset($_SESSION['admin_name'])) :
        ?>
-   <h1>Registro de usuario nuevo</h1>
+   <h1>Perfil del usuario</h1>
                       <?php
            $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
       mysqli_set_charset($db, 'utf8')
