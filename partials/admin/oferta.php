@@ -103,20 +103,20 @@
         }
         ?>
      </select>
-                    <div class="labelac">Competencia técnica 1</div>
+                  <!--  <div class="labelac">Competencia técnica 1</div>
   <select class="form-control dropd">
     <option>
         Selecciona el correspondiente
         </option>           
         <?php
-        $query="select * from tecnica";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
-            }
-        }
+       // $query="select * from tecnica";
+        //$result= mysqli_query($db, $query);
+        //if($result)
+        //{
+          //  while($row=mysqli_fetch_array($result)){
+           //     echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+            //}
+        //}
         ?>
      </select>
                     <div class="labelac">Competencia técnica 2</div>
@@ -125,14 +125,14 @@
         Selecciona el correspondiente
         </option>           
         <?php
-        $query="select * from tecnica";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
-            }
-        }
+        //$query="select * from tecnica";
+        //$result= mysqli_query($db, $query);
+        //if($result)
+        //{
+          //  while($row=mysqli_fetch_array($result)){
+            //    echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+            //}
+        //}
         ?>
      </select>
                     <div class="labelac">Competencia técnica 3</div>
@@ -141,14 +141,14 @@
         Selecciona el correspondiente
         </option>           
         <?php
-        $query="select * from tecnica";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
-            }
-        }
+        //$query="select * from tecnica";
+        //$result= mysqli_query($db, $query);
+        //if($result)
+        //{
+          //  while($row=mysqli_fetch_array($result)){
+            //    echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+            //}
+        //}
         ?>
      </select>
                     <div class="labelac">Competencia técnica 4</div>
@@ -157,14 +157,14 @@
         Selecciona el correspondiente
         </option>           
         <?php
-        $query="select * from tecnica";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
-            }
-        }
+      //  $query="select * from tecnica";
+        //$result= mysqli_query($db, $query);
+        //if($result)
+ //       {
+   //         while($row=mysqli_fetch_array($result)){
+     //           echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+       //     }
+        //}
         ?>
      </select>
                     <div class="labelac">Competencia técnica 5</div>
@@ -173,14 +173,14 @@
         Selecciona el correspondiente
         </option>           
         <?php
-        $query="select * from tecnica";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
-            }
-        }
+//        $query="select * from tecnica";
+  //      $result= mysqli_query($db, $query);
+    //    if($result)
+      //  {
+        //    while($row=mysqli_fetch_array($result)){
+          //      echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+            //}
+        //}
         ?>
      </select>
                     <div class="labelac">Habilidad 1</div>
@@ -189,14 +189,14 @@
         Selecciona el correspondiente
         </option>           
         <?php
-        $query="select * from habilidad";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idhabilidad'].'">'.$row['nombre'].'</option>';
-            }
-        }
+ //       $query="select * from habilidad";
+   //     $result= mysqli_query($db, $query);
+     //   if($result)
+       // {
+         //   while($row=mysqli_fetch_array($result)){
+           //     echo'<option value="'.$row['idhabilidad'].'">'.$row['nombre'].'</option>';
+   //         }
+     //   }
         ?>
      </select>
                    <div class="labelac">Habilidad 2</div>
@@ -205,14 +205,14 @@
         Selecciona el correspondiente
         </option>           
         <?php
-        $query="select * from habilidad";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idhabilidad'].'">'.$row['nombre'].'</option>';
-            }
-        }
+//        $query="select * from habilidad";
+  //      $result= mysqli_query($db, $query);
+    //    if($result)
+      //  {
+        //    while($row=mysqli_fetch_array($result)){
+          //      echo'<option value="'.$row['idhabilidad'].'">'.$row['nombre'].'</option>';
+  //          }
+    //    }
         ?>
      </select>
                    <div class="labelac">Habilidad 3</div>
@@ -221,14 +221,14 @@
         Selecciona el correspondiente
         </option>           
         <?php
-        $query="select * from habilidad";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idhabilidad'].'">'.$row['nombre'].'</option>';
-            }
-        }
+//        $query="select * from habilidad";
+  //      $result= mysqli_query($db, $query);
+   //     if($result)
+ //       {
+   //         while($row=mysqli_fetch_array($result)){
+     //           echo'<option value="'.$row['idhabilidad'].'">'.$row['nombre'].'</option>';
+    //        }
+      //  }
         ?>
      </select>
                    <div class="labelac">Habilidad 4</div>
@@ -237,14 +237,14 @@
         Selecciona el correspondiente
         </option>           
         <?php
-        $query="select * from habilidad";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idhabilidad'].'">'.$row['nombre'].'</option>';
-            }
-        }
+  //      $query="select * from habilidad";
+    //    $result= mysqli_query($db, $query);
+      //  if($result)
+        //{
+ //           while($row=mysqli_fetch_array($result)){
+   //             echo'<option value="'.$row['idhabilidad'].'">'.$row['nombre'].'</option>';
+     //       }
+       // }
         ?>
      </select>
                    <div class="labelac">Habilidad 5</div>
@@ -253,16 +253,16 @@
         Selecciona el correspondiente
         </option>           
         <?php
-        $query="select * from habilidad";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idhabilidad'].'">'.$row['nombre'].'</option>';
-            }
-        }
+  //      $query="select * from habilidad";
+    //    $result= mysqli_query($db, $query);
+      //  if($result)
+        //{
+ //           while($row=mysqli_fetch_array($result)){
+   //             echo'<option value="'.$row['idhabilidad'].'">'.$row['nombre'].'</option>';
+     //       }
+      //  }
         ?>
-     </select> 
+     </select> -->
               <div class="labelac">Localidad</div>
   <select class="form-control dropd">
     <option>
