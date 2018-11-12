@@ -21,7 +21,7 @@ error_reporting(E_ALL ^ E_WARNING);?>
 <body>
     <div class="fondo">
      <div class="jumbotron" >
-               <form method="post" action="../practicum-master/practicum/usuario/serverusuario.php">
+               <form method="post" action="../Practicum/practicum-master/usuario/serverusuario.php">
       <?php
     $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
 $correo=$_SESSION['correo'];
