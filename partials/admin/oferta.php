@@ -9,7 +9,7 @@ include('servertrabajo.php')
     <!-- logged in user information -->
 <div class="fondo">
      <div class="jumbotron">
-               <form method="post" action="../../practicum-master/partials/admin/servertrabajo.php">
+               <form method="post" action="../Practicum/practicum-master/partials/admin/servertrabajo.php">
       <?php  if (isset($_SESSION['admin_name'])) : ?>
    <h1>Nueva oferta de trabajo</h1>
                       <?php
