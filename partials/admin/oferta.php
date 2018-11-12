@@ -1,11 +1,15 @@
+
 <?php include('../../admin/session-admin.php') ?>
 
 <?php if (isset($_SESSION['success'])) : ?>
   	<?php endif ?>
+<?php
+include('servertrabajo.php')
+    ?>
     <!-- logged in user information -->
 <div class="fondo">
      <div class="jumbotron">
-               <form method="post" action="register.php">
+               <form method="post" action="../practicum-master/partials/admin/servertrabajo.php">
       <?php  if (isset($_SESSION['admin_name'])) : ?>
    <h1>Nueva oferta de trabajo</h1>
                       <?php
@@ -17,13 +21,19 @@
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="nombre" ria-describedby="sizing-addon1" value="">
       </div>
+        <div class="labelac">Descripcion</div>
+ <div class="input-group input-group-lg">
+ <span class="input-group-addon" id="sizing-addon1"></span>
+  <input style="height:100px" type="text" class="form-control" name="descripcion" ria-describedby="sizing-addon1" value="">
+      </div>
+                   
    <div class="labelac">Salario</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="nombre" class="form-control" name="apellido_paterno" ria-describedby="sizing-addon1" value="">
+  <input type="text" class="form-control" name="salario" ria-describedby="sizing-addon1" value="">
       </div>
    <div class="labelac">Empresa</div>
-    <select class="form-control dropd">
+    <select name="empresa" class="form-control dropd">
     <option>
         Selecciona el correspondiente
         </option>           
@@ -39,24 +49,24 @@
         ?>
      </select>
    <div class="labelac">Fecha</div>
-  <input type="date" class="form-control dropd" name="edad"value="">
+  <input type="date" class="form-control dropd" name="fecha" value="">
    <div class="labelac">Teléfono</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="nombre" class="form-control" name="telefono" ria-describedby="sizing-addon1" value="">
+  <input type="text" class="form-control" name="telefono" ria-describedby="sizing-addon1" value="">
       </div>
          <div class="labelac">Correo</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="nombre" class="form-control" name="telefono" ria-describedby="sizing-addon1" value="">
+  <input type="text" class="form-control" name="correo" ria-describedby="sizing-addon1" value="">
       </div>
          <div class="labelac">Años de experiencia</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="nombre" class="form-control" name="telefono" ria-describedby="sizing-addon1" value="">
+  <input type="number" class="form-control" name="experiencia" ria-describedby="sizing-addon1" value="">
       </div>
          <div class="labelac">Horario</div>
-  <select class="form-control dropd">
+  <select name="horario" class="form-control dropd">
     <option>
         Selecciona el correspondiente
         </option>           
@@ -66,13 +76,13 @@
         if($result)
         {
             while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idhorario'].'">'.$row['tipo'].'</option>';
+                echo'<option value="'.$row['id_horario'].'">'.$row['tipo'].'</option>';
             }
         }
         ?>
      </select>
          <div class="labelac">Categoría</div>
-  <select class="form-control dropd">
+  <select name="categoria" class="form-control dropd">
     <option>
         Selecciona el correspondiente
         </option>           
@@ -88,7 +98,7 @@
         ?>
      </select>
          <div class="labelac">Subcategoría</div>
-  <select class="form-control dropd">
+  <select name="subcategoria" class="form-control dropd">
     <option>
         Selecciona el correspondiente
         </option>           
@@ -264,7 +274,7 @@
         ?>
      </select> -->
               <div class="labelac">Localidad</div>
-  <select class="form-control dropd">
+  <select name="localidad" class="form-control dropd">
     <option>
         Selecciona el correspondiente
         </option>           
@@ -274,13 +284,13 @@
         if($result)
         {
             while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idlocalidad'].'">'.$row['nombre'].'</option>';
+                echo'<option value="'.$row['idlocalidad'].'">'.$row['nombrel'].'</option>';
             }
         }
         ?>
      </select>
          <div class="labelac">Nivel de inglés</div>
- <select class="form-control dropd">
+ <select name="ingles" class="form-control dropd">
     <option>
         Selecciona el correspondiente
         </option>           
@@ -295,13 +305,50 @@
         }
         ?>
      </select>
+                   
+                   
+         <div class="labelac">Educación</div>
+ <select name="educacion" class="form-control dropd">
+    <option>
+        Selecciona el correspondiente
+        </option>           
+        <?php
+        $query="select * from educacion";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                echo'<option value="'.$row['ideducacion'].'">'.$row['nombre'].'</option>';
+            }
+        }
+        ?>
+     </select>
+        
+        <div class="labelac">Sexo</div>
+ <select name="sexo" class="form-control dropd">
+    <option>
+        Selecciona el correspondiente
+        </option>           
+        <?php
+        $query="select * from sexo";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                echo'<option value="'.$row['idsexo'].'">'.$row['nombre'].'</option>';
+            }
+        }
+        ?>
+     </select>
+                   
+                   
      <div class="labelac">Edad requerida</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="nombre" class="form-control" name="telefono" ria-describedby="sizing-addon1" value="">
+  <input type="nombre" class="form-control" name="edad_req" ria-describedby="sizing-addon1" value="">
                    </div>
-                  <div class="labelac">Activo</div>
- <select class="form-control dropd">
+    <div class="labelac">Activo</div>
+ <select name="activo" class="form-control dropd">
     <option>
         Selecciona el correspondiente
         </option>  
@@ -309,7 +356,7 @@
      <option value="no" name="activo">No</option> 
                    </select>
     <div class="input-group">
-    <button type="submit" class="btn btn2" name="reg_user_register">Registrar</button>
+    <button type="submit" class="btn btn2" name="reg_oferta_register">Registrar</button>
   	</div>
     
          </form>
@@ -341,4 +388,3 @@
     
 <!--<a role="button" class="btn btn-success btn-lg btn-block" href="#!Registro">Registrar Alumno</a>-->
     <?php endif ?>
-
