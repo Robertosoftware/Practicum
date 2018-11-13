@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-10-2018 a las 13:11:09
--- Versión del servidor: 5.7.23-0ubuntu0.16.04.1
+-- Tiempo de generación: 13-11-2018 a las 08:12:15
+-- Versión del servidor: 5.7.24-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.32-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `mandra`
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `admin_name`, `password`, `create_time`) VALUES
-(1, 'root', '254088Ma!', '2018-10-15 23:07:37');
+(1, 'root', '7993e11204b215b27694b6f139e34ce8', '2018-11-08 06:31:37');
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ INSERT INTO `admin` (`id_admin`, `admin_name`, `password`, `create_time`) VALUES
 CREATE TABLE `categoria` (
   `idcategoria` int(11) NOT NULL,
   `nombre` varchar(25) NOT NULL,
-  `descripcion` varchar(400) NOT NULL
+  `descripcion` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -57,7 +57,7 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`idcategoria`, `nombre`, `descripcion`) VALUES
-(1, 'Ingenieria', 'Ingenierias');
+(1, 'Ingenieria', 'Licenciatura');
 
 -- --------------------------------------------------------
 
@@ -220,16 +220,17 @@ INSERT INTO `ingles` (`idingles`, `nivel`) VALUES
 
 CREATE TABLE `localidad` (
   `idlocalidad` int(11) NOT NULL,
-  `nombrel` varchar(22) NOT NULL
+  `nombre` varchar(22) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `localidad`
 --
 
-INSERT INTO `localidad` (`idlocalidad`, `nombrel`) VALUES
+INSERT INTO `localidad` (`idlocalidad`, `nombre`) VALUES
 (1, 'Distrito Federal'),
-(2, 'Estado de México');
+(2, 'Estado de México'),
+(4, 'Toluca');
 
 -- --------------------------------------------------------
 
@@ -331,6 +332,20 @@ CREATE TABLE `trabajo` (
   `id_trabajo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `trabajo`
+--
+
+INSERT INTO `trabajo` (`anos_exp`, `activo`, `nombre`, `salario`, `fecha_post`, `descripcion`, `telefono`, `correo`, `horario_id_horario`, `subcategoria_idsubcategoria`, `categoria_idcategoria`, `localidad_idlocalidad`, `ingles_idingles`, `empresa_idempresa`, `sexo_idsexo`, `educacion_ideducacion`, `edad_req`, `id_trabajo`) VALUES
+(19, 'si', 'Becario', 12000, '2018-11-17', 'Jefe', '5526277283', 'tvkr@krmc.com', 1, 1, 1, 2, 3, 2, 2, 1, 19, 1),
+(1, 'si', 'Becario', 1200, '2018-11-16', '6to a 7mo semestre', '5537737288', 'roberto@gmail.com', 4, 1, 1, 1, 3, 3, 2, 4, 19, 2),
+(1, 'si', 'Bosques de las Lomas a', 1, '2018-11-10', 'w', '1', 'rvirvvrivr@gamil.com', 2, 1, 1, 2, 4, 8, 2, 4, 19, 3),
+(3, 'Activar', 'Becario', 2000, '2018-11-06', '33', '33', 'roberto@gmail.com', 1, 1, 1, 1, 1, 1, 2, 5, 34, 6),
+(2, 'Activar', 'e', 2, '2018-11-09', 's', '2', 'roberto@gmail.com', 3, 1, 1, 2, 4, 3, 1, 2, 2, 7),
+(1, 'Activar', 'Roberto', 1, '2018-11-16', 'j', '243', 'roberto@gmail.com', 1, 1, 1, 1, 3, 2, 2, 1, 4, 8),
+(8, 'Activar', 'io', 23, '2018-11-07', 'jj', '66', 'roberto200@gmail.com', 3, 1, 1, 1, 4, 3, 1, 1, 23, 9),
+(0, 'Activar', 'Becario de Sistemas', 7000, '2018-11-14', 'Es un puesto de becario sin prestaciones.', '5524388918', 'root@gmail.com', 2, 1, 1, 2, 4, 6, 3, 3, 20, 11);
+
 -- --------------------------------------------------------
 
 --
@@ -342,6 +357,15 @@ CREATE TABLE `trabajo_has_habilidad` (
   `importancia` int(11) NOT NULL,
   `trabajo_id_trabajo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `trabajo_has_habilidad`
+--
+
+INSERT INTO `trabajo_has_habilidad` (`habilidad_idhabilidad`, `importancia`, `trabajo_id_trabajo`) VALUES
+(1, 1, 11),
+(11, 3, 11),
+(13, 2, 11);
 
 -- --------------------------------------------------------
 
@@ -355,6 +379,15 @@ CREATE TABLE `trabajo_has_tecnica` (
   `pericidad` int(11) NOT NULL,
   `trabajo_id_trabajo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `trabajo_has_tecnica`
+--
+
+INSERT INTO `trabajo_has_tecnica` (`tecnica_idtecnica`, `importancia`, `pericidad`, `trabajo_id_trabajo`) VALUES
+(1, 1, 4, 11),
+(8, 3, 3, 11),
+(10, 2, 2, 11);
 
 -- --------------------------------------------------------
 
@@ -374,11 +407,9 @@ CREATE TABLE `user_register` (
 --
 
 INSERT INTO `user_register` (`id_usuario`, `correo`, `password`, `create_time`) VALUES
-(6, 'roberto5@gmail.com', '2420', '2018-10-15 21:22:40'),
 (7, 'roberto@gmail.com', '2420', '2018-10-15 21:24:30'),
 (8, 'bonilla@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 21:33:49'),
 (9, 'bonilla2@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 21:38:21'),
-(10, 'bonilla5@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 21:39:56'),
 (11, 'bonilla20@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 21:40:38'),
 (12, 'bonilla50@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 21:42:13'),
 (13, 'bonilla1100@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 21:49:13'),
@@ -392,7 +423,11 @@ INSERT INTO `user_register` (`id_usuario`, `correo`, `password`, `create_time`) 
 (21, 'root@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 22:32:11'),
 (22, 'rvirvvrivr@gamil.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 22:39:21'),
 (23, 'tvkr@krmc.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 22:43:11'),
-(24, 'roberto24@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 23:14:46');
+(24, 'roberto24@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-15 23:14:46'),
+(25, 'roberto88@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-23 03:34:49'),
+(26, 'roberto34@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-11-08 04:54:04'),
+(27, 'admin@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-11-13 07:33:00'),
+(28, 'robbi@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-11-13 08:15:10');
 
 -- --------------------------------------------------------
 
@@ -413,7 +448,7 @@ CREATE TABLE `usuario` (
   `fecha_registro` timestamp NULL DEFAULT NULL,
   `activo` varchar(15) DEFAULT NULL,
   `completo` varchar(5) DEFAULT NULL,
-  `descripción_habilidad` varchar(450) DEFAULT NULL,
+  `descripcion_habilidad` varchar(450) DEFAULT NULL,
   `descripcion_persona` varchar(450) DEFAULT NULL,
   `horario_id_horario` int(11) DEFAULT NULL,
   `subcategoria_idsubcategoria` int(11) DEFAULT NULL,
@@ -429,14 +464,12 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`nombre`, `apellido_paterno`, `apellido_materno`, `edad`, `telefono`, `celular`, `linkedin`, `sueldo_actual`, `salario_deseado`, `fecha_registro`, `activo`, `completo`, `descripción_habilidad`, `descripcion_persona`, `horario_id_horario`, `subcategoria_idsubcategoria`, `categoria_idcategoria`, `localidad_idlocalidad`, `ingles_idingles`, `sexo_idsexo`, `educacion_ideducacion`, `user_register_id_usuario`) VALUES
-(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6),
-(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7),
-(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12),
-(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 19),
-(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 20),
-(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 23),
-(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24);
+INSERT INTO `usuario` (`nombre`, `apellido_paterno`, `apellido_materno`, `edad`, `telefono`, `celular`, `linkedin`, `sueldo_actual`, `salario_deseado`, `fecha_registro`, `activo`, `completo`, `descripcion_habilidad`, `descripcion_persona`, `horario_id_horario`, `subcategoria_idsubcategoria`, `categoria_idcategoria`, `localidad_idlocalidad`, `ingles_idingles`, `sexo_idsexo`, `educacion_ideducacion`, `user_register_id_usuario`) VALUES
+(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24),
+(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 25),
+(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 26),
+('eub4', 'rf', 'j', 1, '777', '99', '0990', 987, 89099, NULL, NULL, NULL, '33', 'jjj', 1, 1, 1, 2, 2, 2, 2, 27),
+('ggmmm', 'uhuuh', 'hb', 1, '1', '1', 'ghh', 55, 66, NULL, NULL, NULL, NULL, 'h', 1, 1, 1, 1, 4, 1, 1, 28);
 
 -- --------------------------------------------------------
 
@@ -664,7 +697,7 @@ ALTER TABLE `ingles`
 -- AUTO_INCREMENT de la tabla `localidad`
 --
 ALTER TABLE `localidad`
-  MODIFY `idlocalidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idlocalidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `sexo`
 --
@@ -676,15 +709,20 @@ ALTER TABLE `sexo`
 ALTER TABLE `subcategoria`
   MODIFY `idsubcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT de la tabla `tecnica`
+--
+ALTER TABLE `tecnica`
+  MODIFY `idtecnica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
 -- AUTO_INCREMENT de la tabla `trabajo`
 --
 ALTER TABLE `trabajo`
-  MODIFY `id_trabajo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_trabajo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `user_register`
 --
 ALTER TABLE `user_register`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- Restricciones para tablas volcadas
 --

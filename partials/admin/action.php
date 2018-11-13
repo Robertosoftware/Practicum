@@ -383,7 +383,7 @@ if (isset($_GET['dtrabajo'])) {
      $delete = mysqli_real_escape_string($db, $_GET['dtrabajo']);
         $query = "Delete from trabajo_has_habilidad where trabajo_id_trabajo='$delete'";
         $results = mysqli_query($db, $query);
-        $query = "Delete from trabajo_has_trabajo where trabajo_id_trabajo='$delete'";
+        $query = "Delete from trabajo_has_tecnica where trabajo_id_trabajo='$delete'";
         $results = mysqli_query($db, $query);
          $query = "Delete from trabajo where id_trabajo='$delete'";
       	$results = mysqli_query($db, $query);
