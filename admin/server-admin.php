@@ -25,6 +25,7 @@ if (isset($_POST['login_admin'])) {
   	array_push($errors, "Password requerido para la operación");
   }
   if (count($errors) == 0) {
+    $password = md5($password);
   	$query = "SELECT * FROM admin WHERE admin_name='$admin_name' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {

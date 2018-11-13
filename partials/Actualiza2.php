@@ -1,10 +1,8 @@
 <?php include('../usuario/session.php');
+session start
 error_reporting(E_ALL ^ E_WARNING);?>
   	<?php if (isset($_SESSION['success'])) : ?>
   	<?php endif ?>
-
-
-
 
 <html>
 <head>
@@ -25,9 +23,11 @@ error_reporting(E_ALL ^ E_WARNING);?>
       <?php
     $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
 $correo=$_SESSION['correo'];
+
 $q="select * from user_register where correo = '$correo';";
 $result =mysqli_query($db, $q);
 $row=mysqli_fetch_array($result);
+
 $id = $row['id_usuario'];
       //  if (isset($_SESSION['admin_name'])) :
        ?>
@@ -162,7 +162,7 @@ $id = $row['id_usuario'];
         $vdeschab = $rowdeschab['descripcion_habilidad'];
     ?>
 
-                        <div class="labelac">Descripción Habilidades</div>
+                        <div class="labelac">Descipción Habilidades</div>
                         <div class="input-group input-group-lg">
                         <span class="input-group-addon" id="sizing-addon1"></span>
                         <input style="height:100px !important;" type="textarea" class="form-control" name="descripcionhab" ria-describedby="sizing-addon1" value="<?php  echo $vdeschab ?>">
@@ -176,7 +176,7 @@ $id = $row['id_usuario'];
         $vdescper = $rowdescper['descripcion_persona'];
     ?>
 
-                           <div class="labelac">Descripción Personal</div>
+                           <div class="labelac">Descripcion personal</div>
                            <div class="input-group input-group-lg">
                            <span class="input-group-addon" id="sizing-addon1"></span>
                            <input style="height:100px !important;" type="textarea" class="form-control" name="descripcionper" ria-describedby="sizing-addon1" value="<?php  echo $vdescper ?>">
@@ -195,7 +195,7 @@ $id = $row['id_usuario'];
                                    
     ?>
                     
-                    <div class="labelac">Educación</div>
+                    <div class="labelac">Educacion</div>
                        <select name="educacion" class="form-control dropd" value="<?php  echo $veducacion ?>">
                            
                          <option value="<?php  echo $veducacion ?>">
@@ -354,31 +354,28 @@ $id = $row['id_usuario'];
         $qlocalidad2="select * from localidad where idlocalidad = $vlocalidad;";
         $rlocalidad2 =mysqli_query($db, $qlocalidad2);
         $rowlocalidad2=mysqli_fetch_array($rlocalidad2);
-        $vlocalidad2 = $rowlocalidad2['nombre'];
+        $vlocalidad2 = $rowlocalidad2['nombrel'];
                                   
                                    
     ?>
                    
 
                   <div class="labelac">Localidad</div>
-      <select name="localidad" class="form-control dropd">
-        <option value="<?php  echo $vlocalidad ?>">
-                             <?php  echo $vlocalidad2 ?>
-                             </option>
-            <?php
-            $query="select * from localidad";
-            $result= mysqli_query($db, $query);
-            if($result)
-            {
-                while($row=mysqli_fetch_array($result)){
-                    echo'<option value="'.$row['idlocalidad'].'">'.$row['nombre'].'</option>';
-                }
+    <select required name="localidad" class="form-control dropd">
+    <option>
+        Selecciona el correspondiente
+        </option>           
+        <?php
+        $query="select * from localidad";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                echo'<option value="'.$row['idlocalidad'].'">'.$row['nombre'].'</option>';
             }
-            ?>
-         </select>
-                   
-                   
-                   
+        }
+        ?>
+     </select>
                     <?php
         $qingles="select * from usuario where user_register_id_usuario = $id;";
         $ringles =mysqli_query($db,$qingles);
@@ -464,6 +461,7 @@ $id = $row['id_usuario'];
        // }
         ?>
      </select>
+
         <div class="labelac">Habilidad 1</div>
   <select class="form-control dropd">
     <option>
@@ -615,5 +613,3 @@ $id = $row['id_usuario'];
     </div>
 <a role="button" class="btn btn-success btn-lg btn-block" href="#!Registro">Registrar Alumno</a>-->
     <?php //endif ?>
-
-   

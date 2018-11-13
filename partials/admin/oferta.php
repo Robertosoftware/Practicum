@@ -1,40 +1,24 @@
-
 <?php include('../../admin/session-admin.php') ?>
-
-<?php if (isset($_SESSION['success'])) : ?>
-  	<?php endif ?>
-<?php
-include('servertrabajo.php')
-    ?>
-    <!-- logged in user information -->
-<div class="fondo">
+    <div class="fondo">
      <div class="jumbotron">
-               <form method="post" action="../Practicum/practicum-master/partials/admin/servertrabajo.php">
+               <form method="post" action="partials/admin/servertrabajo.php">
       <?php  if (isset($_SESSION['admin_name'])) : ?>
-   <h1>Nueva oferta de trabajo</h1>
-                      <?php
-            $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
-      mysqli_set_charset($db, 'utf8')
-          ?>
+    <?php  $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
+      mysqli_set_charset($db, 'utf8') ?>
+    <h2>Nueva oferta de trabajo</h2>
        <div class="labelac">Nombre de la vacante</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="nombre" ria-describedby="sizing-addon1" value="">
-      </div>
-        <div class="labelac">Descripcion</div>
- <div class="input-group input-group-lg">
- <span class="input-group-addon" id="sizing-addon1"></span>
-  <input style="height:100px" type="text" class="form-control" name="descripcion" ria-describedby="sizing-addon1" value="">
-      </div>
-                   
+  <input type="text" class="form-control" name="nombre" ria-describedby="sizing-addon1" value="" required>
+      </div>    
    <div class="labelac">Salario</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="salario" ria-describedby="sizing-addon1" value="">
+  <input type="number" class="form-control" name="salario" ria-describedby="sizing-addon1" value="" required>
       </div>
    <div class="labelac">Empresa</div>
-    <select name="empresa" class="form-control dropd">
-    <option>
+    <select required name="empresa" class="form-control dropd">
+    <option value="">
         Selecciona el correspondiente
         </option>           
         <?php
@@ -49,25 +33,25 @@ include('servertrabajo.php')
         ?>
      </select>
    <div class="labelac">Fecha</div>
-  <input type="date" class="form-control dropd" name="fecha" value="">
+  <input type="date" class="form-control dropd" name="fecha" value="" required>
    <div class="labelac">Teléfono</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="telefono" ria-describedby="sizing-addon1" value="">
+  <input type="number" class="form-control" name="telefono" ria-describedby="sizing-addon1" value="" required>
       </div>
          <div class="labelac">Correo</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="correo" ria-describedby="sizing-addon1" value="">
+  <input type="email" class="form-control" name="correo" ria-describedby="sizing-addon1" value="" required>
       </div>
          <div class="labelac">Años de experiencia</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="number" class="form-control" name="experiencia" ria-describedby="sizing-addon1" value="">
+  <input type="number" class="form-control" name="experiencia" ria-describedby="sizing-addon1" value="" required>
       </div>
          <div class="labelac">Horario</div>
-  <select name="horario" class="form-control dropd">
-    <option>
+  <select required name="horario" class="form-control dropd">
+    <option value="">
         Selecciona el correspondiente
         </option>           
         <?php
@@ -82,8 +66,8 @@ include('servertrabajo.php')
         ?>
      </select>
          <div class="labelac">Categoría</div>
-  <select name="categoria" class="form-control dropd">
-    <option>
+  <select required name="categoria" class="form-control dropd">
+    <option value="">
         Selecciona el correspondiente
         </option>           
         <?php
@@ -98,8 +82,8 @@ include('servertrabajo.php')
         ?>
      </select>
          <div class="labelac">Subcategoría</div>
-  <select name="subcategoria" class="form-control dropd">
-    <option>
+  <select required name="subcategoria" class="form-control dropd">
+    <option value="">
         Selecciona el correspondiente
         </option>           
         <?php
@@ -113,27 +97,59 @@ include('servertrabajo.php')
         }
         ?>
      </select>
-                  <!--  <div class="labelac">Competencia técnica 1</div>
-  <select class="form-control dropd">
+                    <div class="labelac">Competencia 1</div>
+  <select required name="competencia1" class="form-control dropd">
+    <option value="">
+        Selecciona el correspondiente
+        </option>           
+        <?php
+        $query="select * from competencia";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+            }
+        }
+        ?>
+     </select>
+                   <div class="labelac">Competencia 2</div>
+  <select required name="competencia2"  class="form-control dropd">
+    <option value="">
+        Selecciona el correspondiente
+        </option>           
+        <?php
+        $query="select * from competencia";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+            }
+        }
+        ?>
+     </select>
+                   <div class="labelac">Competencia 3</div>
+  <select required name="competencia3" class="form-control dropd">
     <option>
         Selecciona el correspondiente
         </option>           
         <?php
-       // $query="select * from tecnica";
-        //$result= mysqli_query($db, $query);
-        //if($result)
-        //{
-          //  while($row=mysqli_fetch_array($result)){
-           //     echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
-            //}
-        //}
+        $query="select * from competencia";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+            }
+        }
         ?>
      </select>
-                    <div class="labelac">Competencia técnica 2</div>
+                   <!-- <div class="labelac">Competencia técnica 2</div>
   <select class="form-control dropd">
     <option>
         Selecciona el correspondiente
-        </option>           
+        </option>        
         <?php
         //$query="select * from tecnica";
         //$result= mysqli_query($db, $query);
@@ -188,7 +204,7 @@ include('servertrabajo.php')
     //    if($result)
       //  {
         //    while($row=mysqli_fetch_array($result)){
-          //      echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+          //      echo'<option value="'.$row['idtecnica'].'">'.$row['nombre'].'</option>';
             //}
         //}
         ?>
@@ -272,9 +288,9 @@ include('servertrabajo.php')
      //       }
       //  }
         ?>
-     </select> -->
+     </select>--> 
               <div class="labelac">Localidad</div>
-  <select name="localidad" class="form-control dropd">
+  <select required name="localidad" class="form-control dropd">
     <option>
         Selecciona el correspondiente
         </option>           
@@ -284,16 +300,16 @@ include('servertrabajo.php')
         if($result)
         {
             while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idlocalidad'].'">'.$row['nombrel'].'</option>';
+                echo'<option value="'.$row['idlocalidad'].'">'.$row['nombre'].'</option>';
             }
         }
         ?>
      </select>
          <div class="labelac">Nivel de inglés</div>
- <select name="ingles" class="form-control dropd">
-    <option>
+ <select required name="ingles" class="form-control dropd">
+    <option value="">
         Selecciona el correspondiente
-        </option>           
+        </option >           
         <?php
         $query="select * from ingles";
         $result= mysqli_query($db, $query);
@@ -308,8 +324,8 @@ include('servertrabajo.php')
                    
                    
          <div class="labelac">Educación</div>
- <select name="educacion" class="form-control dropd">
-    <option>
+ <select required name="educacion" class="form-control dropd">
+    <option value="">
         Selecciona el correspondiente
         </option>           
         <?php
@@ -325,8 +341,8 @@ include('servertrabajo.php')
      </select>
         
         <div class="labelac">Sexo</div>
- <select name="sexo" class="form-control dropd">
-    <option>
+ <select required name="sexo" class="form-control dropd">
+    <option value="">
         Selecciona el correspondiente
         </option>           
         <?php
@@ -345,18 +361,23 @@ include('servertrabajo.php')
      <div class="labelac">Edad requerida</div>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="nombre" class="form-control" name="edad_req" ria-describedby="sizing-addon1" value="">
+  <input type="number" class="form-control" name="edad_req" ria-describedby="sizing-addon1" value="" required>
                    </div>
+    <div class="labelac">Descripcion</div>
+ <div class="input-group input-group-lg">
+ <span class="input-group-addon" id="sizing-addon1"></span>
+  <input style="height:100px" type="text" class="form-control" name="descripcion" ria-describedby="sizing-addon1" value="" >
+      </div>   
     <div class="labelac">Activo</div>
- <select name="activo" class="form-control dropd">
-    <option>
+ <select required name="activo" class="form-control dropd">
+    <option value="">
         Selecciona el correspondiente
         </option>  
-     <option value="si" name="activo">Sí</option> 
-     <option value="no" name="activo">No</option> 
+     <option value="Activar">Activar</option> 
+     <option value="Desactivar" >Desactivar</option> 
                    </select>
     <div class="input-group">
-    <button type="submit" class="btn btn2" name="reg_oferta_register">Registrar</button>
+    <button type="submit" class="btn btn-success btn-lg" name="oferta_register">Siguiente</button>
   	</div>
     
          </form>
@@ -379,11 +400,9 @@ include('servertrabajo.php')
         $('select[name="tecnica"]').empty();
     }
 });                      }
-                   </script>-->
+                   </script>
          
       </div>
-    <div class="cuerpo">
-</div>
     </div>
     
 <!--<a role="button" class="btn btn-success btn-lg btn-block" href="#!Registro">Registrar Alumno</a>-->

@@ -41,7 +41,6 @@ th
   text-align: left;
   margin: 3px;
     margin-top: 10px;
-  font-weight: bold;
   font-size: 20px;  
 }
 .input-group {
@@ -69,4 +68,14 @@ color: #555;
 background-color: #fff;
 background-image: none;
 border: 1px solid #ccc;
+}
+.outer-div
+{
+     padding: 30px;
+     text-align: center;
+}
+.inner-div
+{
+     display: inline-block;
+     padding: 50px;
 }

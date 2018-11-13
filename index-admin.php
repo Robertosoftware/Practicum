@@ -45,19 +45,18 @@
       <ul class="dropdown-menu">
           <li class="dropdown-header">Tablas mayores</li>
         <li><a href="#!Usuarios">Usuarios</a></li>
-        <li><a href="#">Trabajos</a></li>
+        <li><a href="#!Trabajo">Trabajos</a></li>
         <li class="dropdown-header">Tablas menores</li>
         <li><a href="#!Categoria">Categoria</a></li>
-        <li><a href="#">Sub categoria</a></li>
-        <li><a href="#">Competencia</a></li>
-        <li><a href="#">Competencia técnica</a></li>
-        <li><a href="#">Educación</a></li>
-        <li><a href="#">Horario</a></li>
-        <li><a href="#">Inglés</a></li>
-        <li><a href="#">Localidad</a></li>
-        <li><a href="#">Sexo</a></li>
-        <li><a href="#">Técnica</a></li>
-        <li><a href="#">Empresa</a></li>
+        <li><a href="#!Subcategoria">Sub categoria</a></li>
+        <li><a href="#!Competencia">Competencia</a></li>
+        <li><a href="#!Tecnica">Competencia técnica</a></li>
+        <li><a href="#!Educacion">Educación</a></li>
+        <li><a href="#!Horario">Horario</a></li>
+        <li><a href="#!Ingles">Inglés</a></li>
+        <li><a href="#!Localidad">Localidad</a></li>
+        <li><a href="#!Sexo">Sexo</a></li>
+        <li><a href="#!Empresa">Empresa</a></li>
       </ul></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">

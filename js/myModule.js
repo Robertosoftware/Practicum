@@ -6,9 +6,13 @@ app.config(function($routeProvider){
 				templateUrl:"partials/Activa.php",
 				controller:"activaCtrl"
 		})
-		.when("/Actualiza", {
+		.when("/Actualizate", {
 				templateUrl:"partials/Actualiza.php",
-				controller:"actualizaCtrl"
+				controller:"mainCtrl"
+		})
+        .when("/Usuario-exito", {
+				templateUrl:"partials/Exito.php",
+				controller:"mainCtrl"
 		})
 		.otherwise({
 				templateUrl:"partials/main.php",

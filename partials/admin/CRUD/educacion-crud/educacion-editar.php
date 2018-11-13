@@ -1,19 +1,18 @@
 <?php session_start();?>
+
 <div class="jumbotron labelac">
 <form method="post" action="partials/admin/action.php">
 <?php
         $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
         mysqli_set_charset($db, 'utf8');
         $numero = $_SESSION['id'];
-        $query="select * from categoria where idcategoria='$numero'";
+        $query="select * from educacion where ideducacion='$numero'";
         $result= mysqli_query($db, $query);
         $nombre="";
-        $descripcion="";
      if($result)
         {
             while($row=mysqli_fetch_array($result)){
                 $nombre= $row['nombre'];
-                $descripcion= $row['descripcion'];
             }
         }
           ?>
@@ -29,20 +28,13 @@ echo $_SESSION['id'];
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="nombre" aria-describedby="sizing-addon1" value="<?php
 echo $nombre;                                                                                                
-?>">
-</div>
-                    <label>Descripción</label>
-      <div class="input-group input-group-lg">
- <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="descripcion" aria-describedby="sizing-addon1" value="<?php
-echo $descripcion;                                                                                                    
-?>">
+?>" required>
 </div>
   	<div class="input-group">
-  		<button type="submit" class="btn btn-info btn-lg" name="categoria_editar">Cambiar datos</button>
+  		<button type="submit" class="btn btn-info btn-lg" name="educacion_editar">Cambiar datos</button>
   	</div>
       	<p>
-         <a href="index-admin.php#!/Categoria">¿Deseas regresar?</a>
+         <a href="index-admin.php#!/Educacion">¿Deseas regresar?</a>
   	</p>
   </form>
 </div>

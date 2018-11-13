@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 error_reporting(E_ALL ^ E_NOTICE);
 error_reporting(E_ALL ^ E_WARNING);
@@ -141,10 +141,8 @@ if($educacion<>NULL){
 // 	$insertado =mysqli_query($db, $query);
 
 if($insertado){
-   echo "Datos actualizados";
+    header('location: ../index.php#!/Usuario-exito');
 }else{
-    echo "Ocurrió un error, intenta de nuevo";
+
 }
-
-
 ?>
