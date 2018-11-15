@@ -408,6 +408,54 @@ $id = $row['id_usuario'];
         }
         ?>
      </select>
+  <div class="labelac">Competencia 1</div>
+  <select required name="competencia1" class="form-control dropd">
+    <option value="">
+        Selecciona el correspondiente
+        </option>           
+        <?php
+        $query="select * from competencia";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+            }
+        }
+        ?>
+     </select>
+                   <div class="labelac">Competencia 2</div>
+  <select required name="competencia2"  class="form-control dropd">
+    <option value="">
+        Selecciona el correspondiente
+        </option>           
+        <?php
+        $query="select * from competencia";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+            }
+        }
+        ?>
+     </select>
+                   <div class="labelac">Competencia 3</div>
+  <select required name="competencia3" class="form-control dropd">
+    <option>
+        Selecciona el correspondiente
+        </option>           
+        <?php
+        $query="select * from competencia";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                echo'<option value="'.$row['idcompetencia'].'">'.$row['nombre'].'</option>';
+            }
+        }
+        ?>
+     </select>
 
 <!--         <div class="labelac">Años de experiencia</div>
  <div class="input-group input-group-lg">
@@ -515,7 +563,7 @@ $id = $row['id_usuario'];
 
 
     <div class="input-group">
-    <button type="submit" class="btn btn-success btn-lg" name="registrar_usuario">Guardar</button>
+    <button type="submit" class="btn btn-success btn-lg" name="registrar_usuario">Siguiente</button>
   	</div>
 
          </form>

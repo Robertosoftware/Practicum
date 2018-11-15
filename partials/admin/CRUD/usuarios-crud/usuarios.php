@@ -15,7 +15,6 @@
                     <tr>
                     <th>#</th>
                     <th>Correo</th>
-                    <th>Password</th>
                     <th>Fecha de registro</th>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
@@ -28,7 +27,6 @@
             while($row=mysqli_fetch_array($result)){
                 echo'<tr><td>'.$row['id_usuario'].'</td>
                 <td>'.$row['correo'].'</td>
-                <td>'.$row['password'].'</td>
                 <td>'.$row['create_time'].'</td>
                  <td><a href="" class="btn btn-info">Editar</a></td>
                     <td><a href="partials/admin/action.php?dusuario='.$row['id_usuario'].'" class="btn btn-danger">Eliminar</a></td>

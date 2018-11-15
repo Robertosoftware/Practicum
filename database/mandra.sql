@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-11-2018 a las 08:12:15
+-- Tiempo de generación: 14-11-2018 a las 20:30:28
 -- Versión del servidor: 5.7.24-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.32-0ubuntu0.16.04.1
 
@@ -329,22 +329,21 @@ CREATE TABLE `trabajo` (
   `sexo_idsexo` int(11) NOT NULL,
   `educacion_ideducacion` int(11) NOT NULL,
   `edad_req` int(11) DEFAULT NULL,
-  `id_trabajo` int(11) NOT NULL
+  `id_trabajo` int(11) NOT NULL,
+  `Registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `trabajo`
 --
 
-INSERT INTO `trabajo` (`anos_exp`, `activo`, `nombre`, `salario`, `fecha_post`, `descripcion`, `telefono`, `correo`, `horario_id_horario`, `subcategoria_idsubcategoria`, `categoria_idcategoria`, `localidad_idlocalidad`, `ingles_idingles`, `empresa_idempresa`, `sexo_idsexo`, `educacion_ideducacion`, `edad_req`, `id_trabajo`) VALUES
-(19, 'si', 'Becario', 12000, '2018-11-17', 'Jefe', '5526277283', 'tvkr@krmc.com', 1, 1, 1, 2, 3, 2, 2, 1, 19, 1),
-(1, 'si', 'Becario', 1200, '2018-11-16', '6to a 7mo semestre', '5537737288', 'roberto@gmail.com', 4, 1, 1, 1, 3, 3, 2, 4, 19, 2),
-(1, 'si', 'Bosques de las Lomas a', 1, '2018-11-10', 'w', '1', 'rvirvvrivr@gamil.com', 2, 1, 1, 2, 4, 8, 2, 4, 19, 3),
-(3, 'Activar', 'Becario', 2000, '2018-11-06', '33', '33', 'roberto@gmail.com', 1, 1, 1, 1, 1, 1, 2, 5, 34, 6),
-(2, 'Activar', 'e', 2, '2018-11-09', 's', '2', 'roberto@gmail.com', 3, 1, 1, 2, 4, 3, 1, 2, 2, 7),
-(1, 'Activar', 'Roberto', 1, '2018-11-16', 'j', '243', 'roberto@gmail.com', 1, 1, 1, 1, 3, 2, 2, 1, 4, 8),
-(8, 'Activar', 'io', 23, '2018-11-07', 'jj', '66', 'roberto200@gmail.com', 3, 1, 1, 1, 4, 3, 1, 1, 23, 9),
-(0, 'Activar', 'Becario de Sistemas', 7000, '2018-11-14', 'Es un puesto de becario sin prestaciones.', '5524388918', 'root@gmail.com', 2, 1, 1, 2, 4, 6, 3, 3, 20, 11);
+INSERT INTO `trabajo` (`anos_exp`, `activo`, `nombre`, `salario`, `fecha_post`, `descripcion`, `telefono`, `correo`, `horario_id_horario`, `subcategoria_idsubcategoria`, `categoria_idcategoria`, `localidad_idlocalidad`, `ingles_idingles`, `empresa_idempresa`, `sexo_idsexo`, `educacion_ideducacion`, `edad_req`, `id_trabajo`, `Registro`) VALUES
+(19, 'si', 'Becario', 12000, '2018-11-17', 'Jefe', '5526277283', 'tvkr@krmc.com', 1, 1, 1, 2, 3, 2, 2, 1, 19, 1, '2018-11-15 00:56:53'),
+(1, 'si', 'Becario', 1200, '2018-11-16', '6to a 7mo semestre', '5537737288', 'roberto@gmail.com', 4, 1, 1, 1, 3, 3, 2, 4, 19, 2, '2018-11-15 00:56:53'),
+(1, 'si', 'Bosques de las Lomas a', 1, '2018-11-10', 'w', '1', 'rvirvvrivr@gamil.com', 2, 1, 1, 2, 4, 8, 2, 4, 19, 3, '2018-11-15 00:56:53'),
+(3, 'Activar', 'Becario', 2000, '2018-11-06', '33', '33', 'roberto@gmail.com', 1, 1, 1, 1, 1, 1, 2, 5, 34, 6, '2018-11-15 00:56:53'),
+(3, 'Activar', 'Desarrollador', 3000, '2018-11-01', 'trabajo descripcion', '552536585937', 'r.lomel@hotmail.com', 2, 1, 1, 1, 2, 2, 1, 2, 2, 12, '2018-11-15 00:56:53'),
+(3, 'Activar', '2rf', 2, '2018-11-08', '24r', '3', 'r@gmai.com', 2, 1, 1, 1, 2, 3, 2, 3, 22, 46, '2018-11-15 01:21:32');
 
 -- --------------------------------------------------------
 
@@ -353,7 +352,7 @@ INSERT INTO `trabajo` (`anos_exp`, `activo`, `nombre`, `salario`, `fecha_post`, 
 --
 
 CREATE TABLE `trabajo_has_habilidad` (
-  `habilidad_idhabilidad` int(11) NOT NULL,
+  `habilidad_idhabilidad` int(11) DEFAULT NULL,
   `importancia` int(11) NOT NULL,
   `trabajo_id_trabajo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -363,9 +362,11 @@ CREATE TABLE `trabajo_has_habilidad` (
 --
 
 INSERT INTO `trabajo_has_habilidad` (`habilidad_idhabilidad`, `importancia`, `trabajo_id_trabajo`) VALUES
-(1, 1, 11),
-(11, 3, 11),
-(13, 2, 11);
+(1, 2, 12),
+(2, 1, 46),
+(5, 1, 12),
+(16, 3, 12),
+(17, 3, 46);
 
 -- --------------------------------------------------------
 
@@ -374,9 +375,9 @@ INSERT INTO `trabajo_has_habilidad` (`habilidad_idhabilidad`, `importancia`, `tr
 --
 
 CREATE TABLE `trabajo_has_tecnica` (
-  `tecnica_idtecnica` int(11) NOT NULL,
+  `tecnica_idtecnica` int(11) DEFAULT NULL,
   `importancia` int(11) NOT NULL,
-  `pericidad` int(11) NOT NULL,
+  `pericidad` int(11) DEFAULT NULL,
   `trabajo_id_trabajo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -385,9 +386,11 @@ CREATE TABLE `trabajo_has_tecnica` (
 --
 
 INSERT INTO `trabajo_has_tecnica` (`tecnica_idtecnica`, `importancia`, `pericidad`, `trabajo_id_trabajo`) VALUES
-(1, 1, 4, 11),
-(8, 3, 3, 11),
-(10, 2, 2, 11);
+(1, 2, 3, 12),
+(1, 1, 3, 46),
+(2, 1, 2, 12),
+(6, 3, 3, 46),
+(10, 3, 5, 12);
 
 -- --------------------------------------------------------
 
@@ -427,7 +430,9 @@ INSERT INTO `user_register` (`id_usuario`, `correo`, `password`, `create_time`) 
 (25, 'roberto88@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-10-23 03:34:49'),
 (26, 'roberto34@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-11-08 04:54:04'),
 (27, 'admin@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-11-13 07:33:00'),
-(28, 'robbi@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-11-13 08:15:10');
+(28, 'robbi@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-11-13 08:15:10'),
+(29, 'r.lomel@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2018-11-13 15:33:40'),
+(30, 'robonilla@gmail.com', '7993e11204b215b27694b6f139e34ce8', '2018-11-15 02:13:40');
 
 -- --------------------------------------------------------
 
@@ -457,19 +462,22 @@ CREATE TABLE `usuario` (
   `ingles_idingles` int(11) DEFAULT NULL,
   `sexo_idsexo` int(11) DEFAULT NULL,
   `educacion_ideducacion` int(11) DEFAULT NULL,
-  `user_register_id_usuario` int(11) NOT NULL
+  `user_register_id_usuario` int(11) NOT NULL,
+  `Registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`nombre`, `apellido_paterno`, `apellido_materno`, `edad`, `telefono`, `celular`, `linkedin`, `sueldo_actual`, `salario_deseado`, `fecha_registro`, `activo`, `completo`, `descripcion_habilidad`, `descripcion_persona`, `horario_id_horario`, `subcategoria_idsubcategoria`, `categoria_idcategoria`, `localidad_idlocalidad`, `ingles_idingles`, `sexo_idsexo`, `educacion_ideducacion`, `user_register_id_usuario`) VALUES
-(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24),
-(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 25),
-(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 26),
-('eub4', 'rf', 'j', 1, '777', '99', '0990', 987, 89099, NULL, NULL, NULL, '33', 'jjj', 1, 1, 1, 2, 2, 2, 2, 27),
-('ggmmm', 'uhuuh', 'hb', 1, '1', '1', 'ghh', 55, 66, NULL, NULL, NULL, NULL, 'h', 1, 1, 1, 1, 4, 1, 1, 28);
+INSERT INTO `usuario` (`nombre`, `apellido_paterno`, `apellido_materno`, `edad`, `telefono`, `celular`, `linkedin`, `sueldo_actual`, `salario_deseado`, `fecha_registro`, `activo`, `completo`, `descripcion_habilidad`, `descripcion_persona`, `horario_id_horario`, `subcategoria_idsubcategoria`, `categoria_idcategoria`, `localidad_idlocalidad`, `ingles_idingles`, `sexo_idsexo`, `educacion_ideducacion`, `user_register_id_usuario`, `Registro`) VALUES
+(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24, '2018-11-15 02:22:35'),
+(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 25, '2018-11-15 02:22:35'),
+(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 26, '2018-11-15 02:22:35'),
+('eub4', 'rf', 'j', 1, '777', '99', '0990', 987, 89099, NULL, 'Activar', NULL, '33', 'jjj', 1, 1, 1, 2, 2, 2, 2, 27, '2018-11-15 02:22:35'),
+('ggmmm', 'uhuuh', 'hb', 1, '1', '1', 'ghh', 55, 66, NULL, NULL, NULL, NULL, 'h', 1, 1, 1, 1, 4, 1, 1, 28, '2018-11-15 02:22:35'),
+('regina', 'lomelin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, 1, NULL, 29, '2018-11-15 02:22:35'),
+('R', 'B', 'I', 12, '22', 'e', NULL, NULL, NULL, NULL, 'Activar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 30, '2018-11-15 02:22:35');
 
 -- --------------------------------------------------------
 
@@ -478,10 +486,22 @@ INSERT INTO `usuario` (`nombre`, `apellido_paterno`, `apellido_materno`, `edad`,
 --
 
 CREATE TABLE `usuario_has_habilidad` (
-  `habilidad_idhabilidad` int(11) NOT NULL,
+  `habilidad_idhabilidad` int(11) DEFAULT NULL,
   `importancia` int(11) NOT NULL,
   `user_register_id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario_has_habilidad`
+--
+
+INSERT INTO `usuario_has_habilidad` (`habilidad_idhabilidad`, `importancia`, `user_register_id_usuario`) VALUES
+(1, 1, 27),
+(2, 2, 27),
+(2, 2, 30),
+(3, 1, 30),
+(8, 3, 27),
+(16, 3, 30);
 
 -- --------------------------------------------------------
 
@@ -490,11 +510,23 @@ CREATE TABLE `usuario_has_habilidad` (
 --
 
 CREATE TABLE `usuario_has_tecnica` (
-  `tecnica_idtecnica` int(11) NOT NULL,
+  `tecnica_idtecnica` int(11) DEFAULT NULL,
   `importancia` int(11) NOT NULL,
-  `pericidad` int(11) NOT NULL,
+  `pericidad` int(11) DEFAULT NULL,
   `user_register_id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario_has_tecnica`
+--
+
+INSERT INTO `usuario_has_tecnica` (`tecnica_idtecnica`, `importancia`, `pericidad`, `user_register_id_usuario`) VALUES
+(1, 1, 2, 27),
+(2, 2, 4, 27),
+(6, 3, 5, 27),
+(1, 1, 2, 30),
+(3, 2, 3, 30),
+(10, 3, 4, 30);
 
 --
 -- Índices para tablas volcadas
@@ -598,7 +630,7 @@ ALTER TABLE `trabajo`
 -- Indices de la tabla `trabajo_has_habilidad`
 --
 ALTER TABLE `trabajo_has_habilidad`
-  ADD PRIMARY KEY (`habilidad_idhabilidad`,`trabajo_id_trabajo`),
+  ADD PRIMARY KEY (`importancia`,`trabajo_id_trabajo`),
   ADD KEY `fk_trabajo_has_habilidad_habilidad1_idx` (`habilidad_idhabilidad`),
   ADD KEY `fk_trabajo_has_habilidad_trabajo1_idx` (`trabajo_id_trabajo`);
 
@@ -606,7 +638,7 @@ ALTER TABLE `trabajo_has_habilidad`
 -- Indices de la tabla `trabajo_has_tecnica`
 --
 ALTER TABLE `trabajo_has_tecnica`
-  ADD PRIMARY KEY (`tecnica_idtecnica`,`trabajo_id_trabajo`),
+  ADD PRIMARY KEY (`importancia`,`trabajo_id_trabajo`),
   ADD KEY `fk_trabajo_has_tecnica_tecnica1_idx` (`tecnica_idtecnica`),
   ADD KEY `fk_trabajo_has_tecnica_trabajo1_idx` (`trabajo_id_trabajo`);
 
@@ -635,8 +667,7 @@ ALTER TABLE `usuario`
 -- Indices de la tabla `usuario_has_habilidad`
 --
 ALTER TABLE `usuario_has_habilidad`
-  ADD PRIMARY KEY (`habilidad_idhabilidad`,`user_register_id_usuario`),
-  ADD UNIQUE KEY `usuario_user_register_id_usuario_UNIQUE` (`user_register_id_usuario`),
+  ADD PRIMARY KEY (`user_register_id_usuario`,`importancia`),
   ADD KEY `fk_usuario_has_habilidad_habilidad1_idx` (`habilidad_idhabilidad`),
   ADD KEY `fk_usuario_has_habilidad_usuario1_idx` (`user_register_id_usuario`);
 
@@ -644,8 +675,7 @@ ALTER TABLE `usuario_has_habilidad`
 -- Indices de la tabla `usuario_has_tecnica`
 --
 ALTER TABLE `usuario_has_tecnica`
-  ADD PRIMARY KEY (`tecnica_idtecnica`,`user_register_id_usuario`),
-  ADD UNIQUE KEY `user_register_id_usuario_UNIQUE` (`user_register_id_usuario`),
+  ADD PRIMARY KEY (`user_register_id_usuario`,`importancia`),
   ADD KEY `fk_usuario_has_tecnica_tecnica1_idx` (`tecnica_idtecnica`),
   ADD KEY `fk_usuario_has_tecnica_usuario1_idx` (`user_register_id_usuario`);
 
@@ -717,12 +747,12 @@ ALTER TABLE `tecnica`
 -- AUTO_INCREMENT de la tabla `trabajo`
 --
 ALTER TABLE `trabajo`
-  MODIFY `id_trabajo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_trabajo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT de la tabla `user_register`
 --
 ALTER TABLE `user_register`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- Restricciones para tablas volcadas
 --
@@ -796,8 +826,7 @@ ALTER TABLE `usuario_has_habilidad`
 -- Filtros para la tabla `usuario_has_tecnica`
 --
 ALTER TABLE `usuario_has_tecnica`
-  ADD CONSTRAINT `fk_usuario_has_tecnica_tecnica1` FOREIGN KEY (`tecnica_idtecnica`) REFERENCES `tecnica` (`idtecnica`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_usuario_has_tecnica_usuario1` FOREIGN KEY (`user_register_id_usuario`) REFERENCES `user_register` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_usuario_has_tecnica_tecnica1` FOREIGN KEY (`tecnica_idtecnica`) REFERENCES `tecnica` (`idtecnica`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

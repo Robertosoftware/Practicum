@@ -9,7 +9,7 @@ session_start();
 
 $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
 $correo=$_SESSION['correo'];
-
+if (isset($_POST['registrar_usuario'])) {
 $q="select * from user_register where correo = '$correo';";
 $result =mysqli_query($db, $q);
 $row=mysqli_fetch_array($result);
@@ -141,8 +141,73 @@ if($educacion<>NULL){
 // 	$insertado =mysqli_query($db, $query);
 
 if($insertado){
-    header('location: ../index.php#!/Usuario-exito');
+      	  $_SESSION['idusuario'] = $id;
+    $edit = mysqli_real_escape_string($db, $_POST['competencia1']);
+  	  $_SESSION['competencia1'] = $edit;
+     $edit = mysqli_real_escape_string($db, $_POST['competencia2']);
+  	  $_SESSION['competencia2'] = $edit;
+     $edit = mysqli_real_escape_string($db, $_POST['competencia3']);
+  	  $_SESSION['competencia3'] = $edit;
+    header('location: ../index.php#!/Usuario-competencia');
 }else{
 
+}
+}
+if (isset($_POST['usuario_competencia'])) {
+ $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
+    mysqli_set_charset($db, 'utf8');
+     $competencia1= mysqli_real_escape_string($db, $_POST['competencia1']);
+         $competencia2= mysqli_real_escape_string($db, $_POST['competencia2']);
+         $competencia3= mysqli_real_escape_string($db, $_POST['competencia3']);
+         $pericidad1= mysqli_real_escape_string($db, $_POST['pericidad1']);
+        $pericidad2= mysqli_real_escape_string($db, $_POST['pericidad2']);
+        $pericidad3= mysqli_real_escape_string($db, $_POST['pericidad3']);
+     $id= mysqli_real_escape_string($db, $_POST['idusuario2']);
+      	$query = "Update usuario_has_tecnica set tecnica_idtecnica = '$competencia1', pericidad = '$pericidad1' where user_register_id_usuario = '$id' and importancia = 1";
+     	$insertado1 =mysqli_query($db, $query);
+   $query = "Update usuario_has_tecnica set tecnica_idtecnica = '$competencia2', pericidad = '$pericidad2' where user_register_id_usuario = '$id' and importancia = 2";
+     	$insertado2 =mysqli_query($db, $query);
+   $query = "Update usuario_has_tecnica set tecnica_idtecnica = '$competencia3', pericidad = '$pericidad3' where user_register_id_usuario = '$id' and importancia = 3";
+     	$insertado3 =mysqli_query($db, $query);
+if($insertado1){
+      	 $_SESSION['idusuario'] = $id;
+    header('location: ../index.php#!/Usuario-habilidad');
+}else{
+        echo "Mal hecho <br>";
+        echo $competencia3;
+     echo "Mal hecho <br>";
+        echo $competencia2;
+     echo "Mal hecho <br>";
+        echo $competencia1;
+     echo "Mal hecho <br>";
+        echo $pericidad2;
+     echo "Mal hecho <br>";
+        echo $id;
+            echo $pericidad1;
+            echo $pericidad3;
+      
+}
+}
+if (isset($_POST['usuario_habilidad'])) {
+ $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mandra');
+    mysqli_set_charset($db, 'utf8');
+     $habilidad1= mysqli_real_escape_string($db, $_POST['habilidad1']);
+    $habilidad2= mysqli_real_escape_string($db, $_POST['habilidad2']);
+    $habilidad3= mysqli_real_escape_string($db, $_POST['habilidad3']);
+    $activo= mysqli_real_escape_string($db, $_POST['activo']);
+         $id= mysqli_real_escape_string($db, $_POST['idusuario2']);
+   $query = "Update usuario_has_habilidad set habilidad_idhabilidad= '$habilidad1' where user_register_id_usuario = '$id' and importancia = 1";
+             	$insertado1 =mysqli_query($db, $query);
+$query = "Update usuario_has_habilidad set habilidad_idhabilidad= '$habilidad2' where user_register_id_usuario = '$id' and importancia = 2";
+             	$insertado =mysqli_query($db, $query);
+     $query = "Update usuario_has_habilidad set habilidad_idhabilidad= '$habilidad3' where user_register_id_usuario = '$id' and importancia = 3";
+             	$insertado =mysqli_query($db, $query);
+    $query= "UPDATE usuario set activo='$activo'where user_register_id_usuario = $id;";
+                 	$insertado =mysqli_query($db, $query);
+    if($insertado1){
+    header('location: ../index.php#!/Usuario-exito');
+}else{
+        echo "Mal hecho";
+}
 }
 ?>

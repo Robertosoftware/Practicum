@@ -41,7 +41,7 @@ include('server.php')
   <input type="password" class="form-control" name="password_2" ria-describedby="sizing-addon1" value="">
 </div>
   	<div class="input-group">
-    <button type="submit" class="btn" name="reg_user_register">Registrar</button>
+    <button type="submit" class="btn btn-primary btn-lg" name="reg_user_register">Registrar</button>
   	</div>
   	<p>
   		Ya eres miembro? <a href="login.php">Ingresa aquí</a>

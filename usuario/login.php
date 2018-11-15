@@ -19,7 +19,7 @@
 </head>
 <body>
   <div class="header">
-  	<h2>Login del Usuario</h2>
+  	<h2>Login-Usuario</h2>
   </div>
 	 
   <form method="post" action="login.php">
@@ -35,7 +35,7 @@
   <input type="password" class="form-control" name="password" aria-describedby="sizing-addon1">
 </div>
   	<div class="input-group">
-  		<button type="submit" class="btn" name="login_user_register">Login</button>
+  		<button type="submit" class="btn btn-primary btn-lg" name="login_user_register">Login</button>
   	</div>
       	<p>
   		¿Deseas registrarte? <a href="../usuario/register.php">Registro de Usuario</a>

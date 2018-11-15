@@ -14,6 +14,14 @@ app.config(function($routeProvider){
 				templateUrl:"partials/Exito.php",
 				controller:"mainCtrl"
 		})
+    .when("/Usuario-competencia", {
+				templateUrl:"partials/usuariocompetencia.php",
+				controller:"mainCtrl"
+		})
+    .when("/Usuario-habilidad", {
+				templateUrl:"partials/usuariohabilidad.php",
+				controller:"mainCtrl"
+		})
 		.otherwise({
 				templateUrl:"partials/main.php",
 				controller:"mainCtrl"

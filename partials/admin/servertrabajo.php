@@ -49,12 +49,12 @@ if (isset($_POST['oferta_competencia'])) {
         $pericidad3= mysqli_real_escape_string($db, $_POST['pericidad3']);
      $id= mysqli_real_escape_string($db, $_POST['id']);
       	$query = "INSERT INTO trabajo_has_tecnica (tecnica_idtecnica, importancia, pericidad, trabajo_id_trabajo) VALUES ('$competencia1', '1', '$pericidad1', '$id')";
-     	$insertado =mysqli_query($db, $query);
+     	$insertado1 =mysqli_query($db, $query);
     $query = "INSERT INTO trabajo_has_tecnica (tecnica_idtecnica, importancia, pericidad, trabajo_id_trabajo) VALUES ('$competencia2', '2', '$pericidad2', '$id')";
      	$insertado =mysqli_query($db, $query);
     $query = "INSERT INTO trabajo_has_tecnica (tecnica_idtecnica, importancia, pericidad, trabajo_id_trabajo) VALUES ('$competencia3', '3', '$pericidad3', '$id')";
      	$insertado =mysqli_query($db, $query);
-if($insertado){
+if($insertado1){
       	 $_SESSION['idtrabajo'] = $id;
     header('location: ../../index-admin.php#!/Ofertahab');
 }else{
@@ -69,12 +69,12 @@ if (isset($_POST['oferta_habilidad'])) {
     $habilidad3= mysqli_real_escape_string($db, $_POST['habilidad3']);
          $id= mysqli_real_escape_string($db, $_POST['id']);
     $query = "INSERT INTO trabajo_has_habilidad (habilidad_idhabilidad, importancia, trabajo_id_trabajo) VALUES ('$habilidad1', '1', '$id')";
-             	$insertado =mysqli_query($db, $query);
+             	$insertado1 =mysqli_query($db, $query);
  $query = "INSERT INTO trabajo_has_habilidad (habilidad_idhabilidad, importancia, trabajo_id_trabajo) VALUES ('$habilidad2', '2', '$id')";
              	$insertado =mysqli_query($db, $query);
      $query = "INSERT INTO trabajo_has_habilidad (habilidad_idhabilidad, importancia, trabajo_id_trabajo) VALUES ('$habilidad3', '3', '$id')";
              	$insertado =mysqli_query($db, $query);
-    if($insertado){
+    if($insertado1){
     header('location: ../../index-admin.php#!/Ofertaexito');
 }else{
         echo "Mal hecho";
